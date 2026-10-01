@@ -1,0 +1,2348 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --cream: #fff8eb;
+  --cream-dark: #f4e6ce;
+  --paper: #fffaf0;
+
+  --brown: #321c17;
+  --brown-light: #60483e;
+
+  --wine: #641f2b;
+  --wine-dark: #3c121b;
+
+  --red: #9b2637;
+
+  --olive: #46523a;
+  --green: #344c3b;
+
+  --gold: #b58a42;
+  --gold-light: #d9bb78;
+
+  --white: #ffffff;
+
+  --glass: rgba(255, 250, 240, 0.82);
+  --glass-dark: rgba(44, 25, 20, 0.82);
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+
+  font-family: "DM Sans", sans-serif;
+
+  background: #21130f;
+  color: var(--brown);
+}
+
+button {
+  font-family: inherit;
+}
+
+button,
+img {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   FIXED CINEMATIC BACKGROUND
+========================= */
+
+.cinema-background {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  background: #21130f;
+}
+
+.cinema-background-image {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/aalaipayuthe.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  transform: scale(1.03);
+}
+
+.cinema-background-vignette {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(26, 16, 13, 0.45),
+      rgba(26, 16, 13, 0.15) 35%,
+      rgba(26, 16, 13, 0.35) 70%,
+      rgba(26, 16, 13, 0.65)
+    );
+}
+
+/* =========================
+   WEBSITE
+========================= */
+
+.website {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 5%;
+
+  background: rgba(35, 21, 16, 0.55);
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid
+    rgba(255, 248, 235, 0.15);
+}
+
+.nav-logo {
+  color: var(--cream);
+  font-family: "Caveat", cursive;
+  font-size: 31px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-logo span {
+  color: var(--gold-light);
+}
+
+.nav-links {
+  display: flex;
+  gap: 5px;
+}
+
+.nav-links button {
+  border: 0;
+  background: transparent;
+
+  padding: 8px 14px;
+
+  color: rgba(255, 248, 235, 0.75);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.nav-links button:hover {
+  color: white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 20px 50px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(31, 18, 14, 0.35),
+      rgba(31, 18, 14, 0.12)
+    );
+}
+
+.section-glass {
+  width: min(900px, 92%);
+
+  padding: 70px 40px;
+
+  text-align: center;
+
+  background: rgba(48, 31, 25, 0.42);
+
+  border: 1px solid
+    rgba(255, 248, 235, 0.2);
+
+  border-radius: 30px;
+
+  backdrop-filter: blur(5px);
+
+  box-shadow:
+    0 30px 100px
+      rgba(0, 0, 0, 0.25);
+
+  animation: heroIn 1.2s ease;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+
+  color: var(--gold-light);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.eyebrow.light {
+  color: #ead8ae;
+}
+
+.hero-heart {
+  color: var(--cream);
+  font-size: 58px;
+
+  animation: heartbeat 2s infinite;
+}
+
+.hero h1 {
+  margin: 15px 0;
+
+  color: var(--cream);
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(
+    70px,
+    11vw,
+    135px
+  );
+
+  font-weight: 500;
+
+  line-height: 0.82;
+}
+
+.hero h1 span {
+  color: #e6c98c;
+}
+
+.hero-names {
+  margin-top: 35px;
+
+  color: var(--cream);
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(
+    30px,
+    5vw,
+    48px
+  );
+}
+
+.hero-names span {
+  color: var(--gold-light);
+}
+
+.hero-date {
+  margin-top: 8px;
+
+  color: rgba(
+    255,
+    248,
+    235,
+    0.7
+  );
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+.hero-scroll {
+  margin-top: 70px;
+
+  color: rgba(
+    255,
+    248,
+    235,
+    0.65
+  );
+
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-scroll b {
+  display: block;
+
+  margin-top: 12px;
+
+  color: var(--gold-light);
+
+  font-size: 25px;
+
+  animation: bounce 1.5s infinite;
+}
+
+/* =========================
+   COMMON CONTENT
+========================= */
+
+.content-section {
+  position: relative;
+
+  width: min(1100px, 90%);
+
+  margin: auto;
+
+  padding: 130px 0;
+}
+
+.glass-card {
+  background: var(--glass);
+
+  border: 1px solid
+    rgba(255, 248, 235, 0.75);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 30px 100px
+      rgba(47, 25, 18, 0.2);
+}
+
+.section-title {
+  margin-bottom: 60px;
+
+  text-align: center;
+}
+
+.section-title h2 {
+  margin: 0;
+
+  color: var(--cream);
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(
+    60px,
+    8vw,
+    95px
+  );
+
+  font-weight: 500;
+
+  line-height: 0.88;
+
+  text-shadow:
+    0 3px 20px
+      rgba(0, 0, 0, 0.35);
+}
+
+.section-title h2 span {
+  color: #e5c68a;
+}
+
+.section-title > p:not(.eyebrow) {
+  margin-top: 20px;
+
+  color: rgba(
+    255,
+    248,
+    235,
+    0.82
+  );
+
+  line-height: 1.8;
+}
+
+/* =========================
+   PROPOSAL
+========================= */
+
+.proposal-section {
+  padding-top: 150px;
+}
+
+.proposal-card {
+  width: min(820px, 100%);
+
+  margin: auto;
+
+  padding: 65px 50px;
+
+  text-align: center;
+
+  border-radius: 35px;
+}
+
+.proposal-card .eyebrow {
+  color: var(--wine);
+}
+
+.small-heart {
+  margin: 15px 0;
+
+  color: var(--wine);
+
+  font-size: 38px;
+}
+
+.proposal-card h2 {
+  margin: 0;
+
+  color: var(--brown);
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(
+    60px,
+    8vw,
+    90px
+  );
+
+  line-height: 0.85;
+
+  font-weight: 500;
+}
+
+.proposal-card h2 span {
+  color: var(--wine);
+}
+
+.proposal-rule {
+  width: 70px;
+  height: 1px;
+
+  margin: 35px auto;
+
+  background: var(--gold);
+}
+
+.proposal-quote {
+  margin: 0;
+
+  color: var(--wine);
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(
+    28px,
+    4vw,
+    42px
+  );
+
+  line-height: 1.25;
+}
+
+.proposal-normal {
+  margin: 30px 0 10px;
+
+  color: var(--brown-light);
+
+  line-height: 1.8;
+}
+
+.proposal-final {
+  color: var(--wine);
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* =========================
+   PHOTO SECTIONS
+========================= */
+
+.photos-section,
+.gallery-section {
+  padding-top: 110px;
+}
+
+.proposal-photo-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, 1fr);
+
+  gap: 14px;
+}
+
+.photo-frame {
+  position: relative;
+
+  height: 310px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  border: 3px solid
+    rgba(255, 248, 235, 0.65);
+
+  cursor: pointer;
+
+  background: #38251e;
+
+  box-shadow:
+    0 20px 60px
+      rgba(0, 0, 0, 0.25);
+}
+
+.photo-frame:nth-child(1),
+.photo-frame:nth-child(5) {
+  grid-column: span 2;
+}
+
+.photo-frame:nth-child(2),
+.photo-frame:nth-child(3),
+.photo-frame:nth-child(4) {
+  grid-column: span 1;
+}
+
+.photo-frame:nth-child(6) {
+  grid-column: span 2;
+}
+
+.photo-frame img,
+.couple-frame img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+}
+
+.photo-frame:hover img,
+.couple-frame:hover img {
+  transform: scale(1.08);
+}
+
+.photo-number {
+  position: absolute;
+
+  top: 13px;
+  left: 13px;
+
+  padding: 7px 10px;
+
+  color: white;
+
+  background: rgba(
+    45,
+    24,
+    18,
+    0.65
+  );
+
+  backdrop-filter: blur(8px);
+
+  border-radius: 20px;
+
+  font-size: 9px;
+}
+
+.photo-hover {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--cream);
+
+  background: rgba(
+    70,
+    25,
+    30,
+    0.4
+  );
+
+  font-size: 50px;
+
+  opacity: 0;
+
+  transition: 0.3s ease;
+}
+
+.photo-frame:hover .photo-hover {
+  opacity: 1;
+}
+
+/* =========================
+   COUPLE GALLERY
+========================= */
+
+.couple-gallery {
+  columns: 4 220px;
+
+  column-gap: 14px;
+}
+
+.couple-frame {
+  position: relative;
+
+  height: 330px;
+
+  margin-bottom: 14px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  border: 3px solid
+    rgba(255, 248, 235, 0.55);
+
+  cursor: pointer;
+
+  break-inside: avoid;
+
+  box-shadow:
+    0 20px 60px
+      rgba(0, 0, 0, 0.2);
+}
+
+.couple-frame:nth-child(2n) {
+  height: 400px;
+}
+
+.gallery-number {
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  padding: 7px 10px;
+
+  color: white;
+
+  background: rgba(
+    45,
+    24,
+    18,
+    0.65
+  );
+
+  border-radius: 20px;
+
+  font-size: 9px;
+}
+
+/* =========================
+   MOMENTS
+========================= */
+
+.moments-section {
+  padding-bottom: 140px;
+}
+
+.moment-list {
+  width: min(850px, 100%);
+
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.moment-card {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    45px
+    65px
+    1fr
+    40px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 18px 22px;
+
+  border-radius: 18px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.moment-card:hover {
+  transform: translateX(8px);
+}
+
+.moment-card.green {
+  color: #eef5e7;
+
+  background:
+    rgba(50, 72, 54, 0.85);
+
+  border: 1px solid
+    rgba(210, 230, 195, 0.2);
+}
+
+.moment-card.red,
+.moment-card.wine {
+  color: #fff0ed;
+
+  background:
+    rgba(90, 26, 35, 0.88);
+
+  border: 1px solid
+    rgba(255, 210, 205, 0.2);
+}
+
+.moment-card.cream {
+  color: var(--brown);
+
+  background:
+    rgba(255, 248, 235, 0.9);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.6);
+}
+
+.moment-card.gold {
+  color: #fff9e9;
+
+  background:
+    rgba(112, 79, 32, 0.88);
+
+  border: 1px solid
+    rgba(255, 225, 160, 0.25);
+}
+
+.moment-number {
+  opacity: 0.55;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.moment-icon {
+  font-size: 28px;
+}
+
+.moment-details {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.moment-details strong {
+  font-family: "Caveat", cursive;
+
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.moment-details small {
+  opacity: 0.7;
+
+  font-size: 10px;
+}
+
+.moment-arrow {
+  font-size: 20px;
+
+  transition: transform 0.3s ease;
+}
+
+.moment-card:hover .moment-arrow {
+  transform: translateX(5px);
+}
+
+/* =========================
+   MEMORY PAGE
+========================= */
+
+.memory-page {
+  position: fixed;
+  inset: 0;
+
+  z-index: 1000;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  -webkit-overflow-scrolling: touch;
+
+  background-image:
+    linear-gradient(
+      rgba(35, 20, 16, 0.55),
+      rgba(35, 20, 16, 0.55)
+    ),
+    url("/images/aalaipayuthe.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.memory-overlay {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.memory-green .memory-overlay {
+  background:
+    rgba(40, 67, 48, 0.18);
+}
+
+.memory-red .memory-overlay,
+.memory-wine .memory-overlay {
+  background:
+    rgba(96, 24, 32, 0.18);
+}
+
+.memory-cream .memory-overlay {
+  background:
+    rgba(255, 240, 214, 0.13);
+}
+
+.memory-gold .memory-overlay {
+  background:
+    rgba(126, 89, 28, 0.2);
+}
+
+.memory-page-inner {
+  position: relative;
+
+  min-height: 100%;
+
+  padding: 100px 20px 130px;
+}
+
+.memory-back {
+  position: fixed;
+
+  top: 22px;
+  left: 25px;
+
+  z-index: 10;
+
+  padding: 10px 18px;
+
+  color: var(--cream);
+
+  background:
+    rgba(35, 20, 16, 0.72);
+
+  border: 1px solid
+    rgba(255, 248, 235, 0.2);
+
+  border-radius: 50px;
+
+  backdrop-filter: blur(12px);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.memory-chapter {
+  position: relative;
+  z-index: 2;
+
+  width: min(820px, 100%);
+
+  margin: auto;
+
+  padding: 50px 25px 80px;
+
+  text-align: center;
+}
+
+.memory-number {
+  color: var(--gold-light);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 5px;
+}
+
+.memory-emoji {
+  margin: 25px 0 15px;
+
+  font-size: 65px;
+
+  animation:
+    floatEmoji 3s ease-in-out
+    infinite;
+}
+
+.memory-chapter h1 {
+  margin: 0;
+
+  color: var(--cream);
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(
+    70px,
+    10vw,
+    115px
+  );
+
+  font-weight: 500;
+
+  line-height: 0.8;
+
+  text-shadow:
+    0 5px 25px
+      rgba(0, 0, 0, 0.4);
+}
+
+.memory-subtitle {
+  margin: 18px 0 30px;
+
+  color: rgba(
+    255,
+    248,
+    235,
+    0.75
+  );
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.memory-rule {
+  width: 75px;
+  height: 1px;
+
+  margin: 0 auto 55px;
+
+  background: var(--gold-light);
+}
+
+.memory-content {
+  width: min(680px, 100%);
+
+  margin: auto;
+
+  padding: 45px 35px;
+
+  background:
+    rgba(255, 248, 235, 0.9);
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 25px 80px
+      rgba(0, 0, 0, 0.25);
+}
+
+.memory-content p {
+  margin: 0 0 28px;
+
+  color: var(--brown);
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(
+    25px,
+    4vw,
+    34px
+  );
+
+  line-height: 1.45;
+}
+
+.memory-content p:last-child {
+  margin-bottom: 0;
+}
+
+.memory-heart {
+  margin: 55px 0 40px;
+
+  color: var(--cream);
+
+  font-size: 45px;
+}
+
+.memory-navigation {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+.memory-navigation button {
+  border: 1px solid
+    rgba(255, 248, 235, 0.3);
+
+  border-radius: 50px;
+
+  padding: 13px 23px;
+
+  color: var(--cream);
+
+  background:
+    rgba(35, 20, 16, 0.7);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.memory-navigation button:hover {
+  transform: translateY(-3px);
+}
+
+.memory-navigation .next-memory {
+  color: var(--brown);
+
+  background: var(--cream);
+
+  border-color: var(--cream);
+}
+
+/* =========================
+   LOVE
+========================= */
+
+.love-section {
+  position: relative;
+
+  min-height: 750px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 130px 20px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(65, 18, 26, 0.73),
+      rgba(46, 18, 20, 0.82)
+    );
+}
+
+.love-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(217, 187, 120, 0.15),
+      transparent 45%
+    );
+}
+
+.love-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(850px, 100%);
+
+  text-align: center;
+}
+
+.love-content h2 {
+  margin: 0;
+
+  color: var(--cream);
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(
+    65px,
+    9vw,
+    110px
+  );
+
+  font-weight: 500;
+
+  line-height: 0.88;
+}
+
+.love-content h2 span {
+  color: #e2c38a;
+}
+
+.love-line {
+  margin: 35px 0;
+
+  color: var(--gold-light);
+
+  font-size: 35px;
+}
+
+.love-content > p:not(.eyebrow) {
+  max-width: 650px;
+
+  margin: 0 auto 18px;
+
+  color:
+    rgba(255, 248, 235, 0.82);
+
+  line-height: 1.9;
+}
+
+.love-bottom {
+  margin-top: 40px;
+
+  color: var(--gold-light);
+
+  font-size: 27px;
+}
+
+/* =========================
+   FOREVER
+========================= */
+
+.forever-section {
+  position: relative;
+
+  min-height: 750px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 120px 20px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(28, 16, 14, 0.78),
+      rgba(60, 18, 28, 0.83)
+    );
+}
+
+.forever-card {
+  position: relative;
+  z-index: 2;
+
+  width: min(850px, 100%);
+
+  padding: 75px 30px;
+
+  text-align: center;
+
+  background:
+    rgba(255, 248, 235, 0.94);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.5);
+
+  border-radius: 35px;
+
+  box-shadow:
+    0 35px 100px
+      rgba(0, 0, 0, 0.35);
+}
+
+.ring {
+  font-size: 58px;
+
+  animation:
+    floatEmoji 3s ease-in-out
+    infinite;
+}
+
+.forever-card .eyebrow {
+  color: var(--wine);
+
+  margin-top: 20px;
+}
+
+.forever-card h2 {
+  margin: 0;
+
+  color: var(--brown);
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(
+    65px,
+    9vw,
+    105px
+  );
+
+  font-weight: 500;
+
+  line-height: 0.88;
+}
+
+.forever-card h2 span {
+  color: var(--wine);
+}
+
+.forever-card > p:not(.eyebrow) {
+  margin: 30px 0;
+
+  color: var(--brown-light);
+
+  line-height: 1.8;
+}
+
+.forever-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+.forever-buttons button {
+  border-radius: 50px;
+
+  padding: 15px 25px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.forever-buttons button:first-child {
+  color: var(--cream);
+
+  background: var(--wine);
+
+  border: 1px solid var(--wine);
+
+  box-shadow:
+    0 10px 30px
+      rgba(100, 31, 43, 0.25);
+}
+
+.forever-buttons button:last-child {
+  color: var(--wine);
+
+  background: transparent;
+
+  border: 1px solid
+    rgba(100, 31, 43, 0.3);
+}
+
+.forever-buttons button:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   LETTER SECTION
+========================= */
+
+.letter-section {
+  position: relative;
+
+  padding: 130px 20px;
+
+  background:
+    rgba(255, 248, 235, 0.92);
+}
+
+.letter-card {
+  width: min(700px, 100%);
+
+  margin: auto;
+
+  text-align: center;
+
+  padding: 70px 30px;
+
+  background:
+    rgba(255, 252, 244, 0.95);
+
+  border:
+    1px solid
+    rgba(100, 31, 43, 0.12);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 30px 80px
+      rgba(53, 27, 20, 0.12);
+}
+
+.letter-icon {
+  font-size: 55px;
+}
+
+.letter-card .eyebrow {
+  color: var(--wine);
+
+  margin-top: 20px;
+}
+
+.letter-card h2 {
+  margin: 0;
+
+  color: var(--brown);
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(
+    60px,
+    8vw,
+    90px
+  );
+
+  line-height: 0.88;
+
+  font-weight: 500;
+}
+
+.letter-card h2 span {
+  color: var(--wine);
+}
+
+.letter-card > p:not(.eyebrow) {
+  color: var(--brown-light);
+
+  line-height: 1.8;
+
+  margin: 25px auto;
+}
+
+.letter-card button {
+  border: 0;
+
+  padding: 15px 28px;
+
+  border-radius: 50px;
+
+  color: var(--cream);
+
+  background: var(--wine);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.letter-card button:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 75px 20px;
+
+  text-align: center;
+
+  color:
+    rgba(255, 248, 235, 0.75);
+
+  background:
+    rgba(34, 18, 14, 0.94);
+}
+
+.footer-heart {
+  color: var(--gold-light);
+
+  font-size: 45px;
+}
+
+.footer p {
+  font-size: 11px;
+}
+
+.footer h3 {
+  margin: 0;
+
+  color: var(--cream);
+
+  font-family: "Caveat", cursive;
+
+  font-size: 42px;
+
+  font-weight: 500;
+}
+
+.footer-date {
+  color: var(--gold-light);
+
+  letter-spacing: 3px;
+}
+
+.footer-last {
+  opacity: 0.55;
+}
+
+/* =========================
+   PHOTO LIGHTBOX
+========================= */
+
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+
+  z-index: 5000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  background:
+    rgba(25, 13, 10, 0.94);
+
+  backdrop-filter: blur(15px);
+}
+
+.photo-lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+
+  border-radius: 15px;
+
+  object-fit: contain;
+
+  box-shadow:
+    0 30px 100px
+      rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-close {
+  position: absolute;
+
+  top: 20px;
+  right: 25px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--cream);
+
+  font-size: 40px;
+
+  cursor: pointer;
+}
+
+/* =========================
+   LETTER MODAL
+========================= */
+
+.letter-modal {
+  position: fixed;
+  inset: 0;
+
+  z-index: 6000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  overflow-y: auto;
+
+  background:
+    rgba(30, 15, 12, 0.82);
+
+  backdrop-filter: blur(12px);
+}
+
+.letter-wrapper {
+  position: relative;
+
+  width: min(760px, 100%);
+
+  max-height: 92vh;
+
+  overflow-y: auto;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 40px 120px
+      rgba(0, 0, 0, 0.45);
+}
+
+.letter-close {
+  position: sticky;
+
+  top: 15px;
+
+  float: right;
+
+  z-index: 5;
+
+  margin: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  color: var(--cream);
+
+  background: var(--wine);
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+.letter-paper {
+  padding: 70px 60px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf0,
+      #f7e9d0
+    );
+
+  color: var(--brown);
+}
+
+.paper-heart {
+  text-align: center;
+
+  color: var(--wine);
+
+  font-size: 38px;
+}
+
+.paper-date {
+  text-align: center;
+
+  color: var(--brown-light);
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.letter-paper h2 {
+  color: var(--wine);
+
+  font-family: "Caveat", cursive;
+
+  font-size: 50px;
+
+  font-weight: 600;
+}
+
+.letter-text p {
+  margin: 0 0 20px;
+
+  color: var(--brown-light);
+
+  font-family: "Caveat", cursive;
+
+  font-size: 24px;
+
+  line-height: 1.5;
+}
+
+.letter-text .big-love,
+.letter-text .ending-love {
+  color: var(--wine);
+
+  font-size: 32px;
+
+  font-weight: 600;
+}
+
+.letter-text .kiss {
+  font-size: 35px;
+}
+
+.signature {
+  margin-top: 45px;
+
+  color: var(--brown-light);
+
+  font-family: "Caveat", cursive;
+
+  font-size: 23px;
+}
+
+.signature strong {
+  color: var(--wine);
+
+  font-size: 30px;
+}
+
+.anniversary-ending {
+  margin-top: 45px;
+
+  padding-top: 30px;
+
+  border-top:
+    1px solid
+    rgba(100, 31, 43, 0.2);
+
+  text-align: center;
+
+  color: var(--wine);
+
+  font-family: "Caveat", cursive;
+
+  font-size: 31px;
+
+  font-weight: 700;
+}
+
+/* =========================
+   RESULT SCREEN
+========================= */
+
+.result-screen {
+  position: fixed;
+  inset: 0;
+
+  z-index: 7000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(43, 15, 19, 0.96),
+      rgba(73, 22, 31, 0.96)
+    );
+}
+
+.result-card {
+  position: relative;
+  z-index: 3;
+
+  width: min(650px, 100%);
+
+  padding: 60px 25px;
+
+  text-align: center;
+
+  border-radius: 35px;
+
+  background:
+    rgba(255, 248, 235, 0.98);
+
+  box-shadow:
+    0 40px 120px
+      rgba(0, 0, 0, 0.4);
+
+  animation:
+    resultIn 0.7s ease;
+}
+
+.result-ring {
+  font-size: 65px;
+
+  animation:
+    floatEmoji 2s infinite;
+}
+
+.result-eyebrow {
+  color: var(--wine);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+.result-card h2 {
+  margin: 10px 0;
+
+  color: var(--brown);
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(
+    48px,
+    7vw,
+    72px
+  );
+
+  font-weight: 600;
+}
+
+.result-main {
+  color: var(--brown-light);
+
+  font-family: "Caveat", cursive;
+
+  font-size: 27px;
+
+  line-height: 1.4;
+}
+
+.result-main span {
+  color: var(--wine);
+
+  font-weight: 700;
+}
+
+.result-divider {
+  margin: 25px 0;
+
+  color: var(--gold);
+
+  font-size: 30px;
+}
+
+.result-message {
+  color: var(--brown-light);
+
+  line-height: 1.8;
+}
+
+.forever-start {
+  color: var(--wine);
+
+  font-family: "Caveat", cursive;
+
+  font-size: 28px;
+}
+
+.result-kisses {
+  margin: 20px 0;
+
+  font-size: 25px;
+}
+
+.result-card button {
+  border: 0;
+
+  border-radius: 50px;
+
+  padding: 13px 23px;
+
+  color: var(--cream);
+
+  background: var(--wine);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.falling-heart {
+  position: absolute;
+
+  top: -50px;
+
+  font-size: 35px;
+
+  animation:
+    falling 5s linear infinite;
+}
+
+.falling-heart.h1 {
+  left: 10%;
+}
+
+.falling-heart.h2 {
+  left: 30%;
+
+  animation-delay: 1s;
+}
+
+.falling-heart.h3 {
+  right: 30%;
+
+  animation-delay: 2s;
+}
+
+.falling-heart.h4 {
+  right: 10%;
+
+  animation-delay: 0.5s;
+}
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-screen {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background-image:
+    url("/images/aalaipayuthe.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.welcome-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(33, 18, 14, 0.6),
+      rgba(76, 26, 35, 0.62)
+    );
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(600px, 90%);
+
+  padding: 50px 30px;
+
+  text-align: center;
+
+  color: var(--cream);
+
+  background:
+    rgba(37, 22, 17, 0.4);
+
+  border:
+    1px solid
+    rgba(255, 248, 235, 0.2);
+
+  border-radius: 30px;
+
+  backdrop-filter: blur(8px);
+
+  animation:
+    heroIn 1s ease;
+}
+
+.welcome-small {
+  color: var(--gold-light);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 5px;
+}
+
+.welcome-symbol {
+  margin: 25px 0 10px;
+
+  font-size: 55px;
+}
+
+.welcome-content h1 {
+  margin: 0;
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(
+    75px,
+    13vw,
+    125px
+  );
+
+  font-weight: 500;
+
+  line-height: 0.75;
+}
+
+.welcome-content h1 span {
+  color: #e1c388;
+}
+
+.welcome-content p {
+  margin: 35px 0;
+
+  color:
+    rgba(255, 248, 235, 0.82);
+
+  line-height: 2;
+}
+
+.welcome-content button {
+  border: 0;
+
+  border-radius: 50px;
+
+  padding: 15px 28px;
+
+  color: var(--brown);
+
+  background: var(--cream);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.welcome-content button:hover {
+  transform:
+    translateY(-4px)
+    scale(1.03);
+}
+
+.welcome-content button span {
+  color: var(--wine);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(8px);
+  }
+}
+
+@keyframes floatEmoji {
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-10px);
+  }
+}
+
+@keyframes resultIn {
+  from {
+    opacity: 0;
+
+    transform:
+      scale(0.8)
+      translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      translateY(0);
+  }
+}
+
+@keyframes falling {
+  0% {
+    transform:
+      translateY(-10vh)
+      rotate(0);
+  }
+
+  100% {
+    transform:
+      translateY(120vh)
+      rotate(720deg);
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+  }
+
+  .proposal-photo-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .photo-frame,
+  .photo-frame:nth-child(n) {
+    grid-column: span 1;
+
+    height: 270px;
+  }
+
+  .couple-gallery {
+    columns: 2 180px;
+  }
+
+  .moment-card {
+    grid-template-columns:
+      35px
+      55px
+      1fr
+      30px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 14px 18px;
+  }
+
+  .hero {
+    min-height: 100svh;
+
+    padding-top: 80px;
+  }
+
+  .section-glass {
+    padding: 50px 20px;
+  }
+
+  .hero h1 {
+    font-size: 75px;
+  }
+
+  .hero-names {
+    font-size: 31px;
+  }
+
+  .content-section {
+    width: 90%;
+
+    padding: 90px 0;
+  }
+
+  .proposal-card {
+    padding: 45px 22px;
+
+    border-radius: 25px;
+  }
+
+  .proposal-card h2 {
+    font-size: 65px;
+  }
+
+  .proposal-quote {
+    font-size: 30px;
+  }
+
+  .proposal-photo-grid {
+    gap: 8px;
+  }
+
+  .photo-frame,
+  .photo-frame:nth-child(n) {
+    height: 220px;
+  }
+
+  .couple-gallery {
+    columns: 2;
+
+    column-gap: 8px;
+  }
+
+  .couple-frame {
+    height: 250px;
+
+    margin-bottom: 8px;
+
+    border-radius: 14px;
+  }
+
+  .couple-frame:nth-child(2n) {
+    height: 310px;
+  }
+
+  .moment-card {
+    grid-template-columns:
+      25px
+      45px
+      1fr
+      20px;
+
+    padding: 15px 12px;
+
+    gap: 6px;
+  }
+
+  .moment-icon {
+    font-size: 24px;
+  }
+
+  .moment-details strong {
+    font-size: 23px;
+  }
+
+  .moment-details small {
+    font-size: 9px;
+  }
+
+  .memory-page-inner {
+    padding:
+      90px 18px
+      110px;
+  }
+
+  .memory-back {
+    top: 14px;
+    left: 14px;
+
+    padding: 9px 14px;
+  }
+
+  .memory-chapter {
+    padding:
+      45px 4px
+      70px;
+  }
+
+  .memory-chapter h1 {
+    font-size: 68px;
+  }
+
+  .memory-content {
+    padding:
+      35px 22px;
+  }
+
+  .memory-content p {
+    font-size: 26px;
+  }
+
+  .memory-navigation {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .memory-navigation button {
+    width: min(280px, 100%);
+  }
+
+  .love-section {
+    min-height: 650px;
+
+    padding:
+      100px 20px;
+  }
+
+  .love-content h2 {
+    font-size: 65px;
+  }
+
+  .forever-section {
+    min-height: 650px;
+
+    padding:
+      90px 15px;
+  }
+
+  .forever-card {
+    padding:
+      55px 18px;
+
+    border-radius: 28px;
+  }
+
+  .forever-card h2 {
+    font-size: 63px;
+  }
+
+  .forever-buttons {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .forever-buttons button {
+    width: min(280px, 100%);
+  }
+
+  .letter-section {
+    padding:
+      90px 15px;
+  }
+
+  .letter-card {
+    padding:
+      55px 20px;
+  }
+
+  .letter-paper {
+    padding:
+      50px 25px;
+  }
+
+  .letter-paper h2 {
+    font-size: 43px;
+  }
+
+  .letter-text p {
+    font-size: 22px;
+  }
+
+  .letter-modal {
+    padding: 10px;
+  }
+
+  .result-card {
+    padding:
+      45px 18px;
+  }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 64px;
+  }
+
+  .hero-names {
+    font-size: 27px;
+  }
+
+  .moment-details strong {
+    font-size: 20px;
+  }
+
+  .memory-chapter h1 {
+    font-size: 58px;
+  }
+
+  .memory-content p {
+    font-size: 23px;
+  }
+}
